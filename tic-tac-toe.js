@@ -3,11 +3,12 @@ console.log('Tic Tac Toe')
 
 /*------ State -----*/
 // These are used to track the 'state' of the game
-let turn, board
+let turn, board, winner
 
 
 /*------ Game Logic -----*/
 init()
+gameplayLoop()
 
 // Purpose of init function is to put the state of the game in a "starting position"
 function init() {
@@ -17,6 +18,7 @@ function init() {
     ' ', ' ', ' ',
     ' ', ' ', ' '
   ]
+  winner = null
   render()
 }
 
@@ -28,10 +30,21 @@ function render() {
 }
 
 function renderBoard() {
-  console.log(' 1 |2| 3');
-  console.log(`1 ${board[0]}|${board[1]}|${board[2]}`);
+  console.log(`  ${board[0]}|${board[1]}|${board[2]}`);
   console.log(' --|-|--');
-  console.log(`2 ${board[3]}|${board[4]}|${board[5]}`);
+  console.log(`  ${board[3]}|${board[4]}|${board[5]}`);
   console.log(' --|-|--');
-  console.log(`3 ${board[6]}|${board[7]}|${board[8]}`);
+  console.log(`  ${board[6]}|${board[7]}|${board[8]}`);
+}
+
+// what goes into a turn of tic tac toe
+// 1. have to choose an empty space
+// 2. put our player's character ('x' or 'o') in that space on the board
+// 3. check if we won the game or not
+// 4. change the turn
+
+function gameplayLoop() {
+  while (!winner) {
+    // Contain all the code for what constitutes one turn
+  }
 }
